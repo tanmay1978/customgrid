@@ -1,0 +1,102 @@
+/*
+* These are styles for the Jquery Dropdown
+*/
+
+.ui-selectmenu-button.ui-button {
+    height: 55px;
+    border-radius: 0;
+    padding-top: 17px;
+    background: $color-text-white;
+}
+
+.ui-selectmenu-button.ui-button:hover {
+    background: $color-text-white;
+}
+
+
+
+.ui-menu .ui-menu-item {
+    padding:0 6px;
+    margin:0 0;
+    padding:15px;
+    border-bottom: 1px solid $color-bg-lightest-grey;
+}
+
+.ui-menu .ui-menu-item:hover {
+    background-color: $color-bg-lightest-grey;
+}
+
+.ui-widget-content .ui-state-active {
+    background: none;
+    color: $color-errormsg-fg;
+    border: none;
+}
+
+/*.s-hidden {
+    visibility:hidden;
+    padding-right:10px;
+}
+.select {
+    cursor:pointer;
+    display:inline-block;
+    position:relative;
+    font:normal 11px/16px $ep-light;
+    color:#20252B;
+    font-weight: normal;
+    border:1px solid #EBEBEB;
+    min-height: 55px;
+    font-size: 16px;
+    width: 200px;
+}
+.styledSelect {
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background-color:white;
+    padding:16px 10px;
+    font-weight:bold;
+}
+.styledSelect:after {
+    content:"";
+    width:0;
+    height:0;
+    border:5px solid transparent;
+    border-color:black transparent transparent transparent;
+    position:absolute;
+    top:25px;
+    right:6px;
+}
+.styledSelect:active, .styledSelect.active {
+
+}
+.styledSelect:focus {
+    font-family: $ep-bold;
+    font-weight: bold;
+}
+.options {
+    display:none;
+    position:absolute;
+    top:100%;
+    right:0;
+    left:0;
+    z-index:999;
+    margin:0 0;
+    padding:0 0;
+    list-style:none;
+    border:1px solid $color-dropdown-bkg-hover;
+    border-top: none;
+    background-color: $color-text-white;
+}
+.options li {
+    padding:0 6px;
+    margin:0 0;
+    padding:15px;
+    border-bottom: 1px solid $color-bg-lightest-grey;
+}
+.options li:hover {
+    background-color: $color-bg-lightest-grey;
+}*/
+
+
