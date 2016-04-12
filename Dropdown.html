@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo showing a Form placements with Nested Grid</title>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-height, height=device-width" />
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+
+</head>
+<body style="background-color: #F6F6F6">
+
+<div class="form-container">
+
+    <section class="tile tile-full tile-pad">
+        <div class="panel-title">
+            <h3>New Orange Payment Slip</h3>
+            <hr>
+        </div>
+
+        <div class="payment-type">
+            <div class="pymnt-options form-group">
+                <label>Type of payment</label><br>
+
+                <input type="radio" id="single-pymnt" name="pymnt-type">
+                <label for="single-pymnt" class="pymnt-types">Single Payment <span></span></label>
+
+                <input type="radio" id="std-order" name="pymnt-type">
+                <label for="std-order" class="pymnt-types">standard Order <span></span></label>
+            </div>
+
+            <div class="form-group ref-number-container">
+                <label>Reference Number*</label>
+                <input type="text" class="default-input-field refnum-field">
+            </div>
+        </div>
+    </section>
+
+
+</div>
+
+<section class="tile tile-full tile-pad">
+    <h3>Default JQuery Dropdown</h3>
+    <form class="dcp-form" ng-init="selectedValue = 'EUR'">
+        <div  class="form-group col-3-tab-potrait col-12-mobile">
+            <label for="amount">Default</label>
+            <select id="selectbox1">
+                <option value="">Select an option&hellip;</option>
+                <option value="aye">Aye</option>
+                <option value="eh">Eh</option>
+                <option value="ooh">Ooh</option>
+                <option value="whoop">Whoop</option>
+            </select>
+        </div>
+    </form>
+</section>
+
+<script src="scripts/assets/jquery-1.12.1.min.js"></script>
+<script type="text/javascript" src="scripts/assets/jquery-ui.min.js" ></script>
+<script type="text/javascript" src="js/common/dropdown.js" ></script>
+
+</body>
+</html>
