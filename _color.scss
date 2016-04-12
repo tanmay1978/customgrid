@@ -1,0 +1,109 @@
+/**
+
+Text colors
+
+*/
+$color-text-soft-black: #20252B;
+$color-text-dark-grey: #757575;
+$color-text-light-dark-grey: #767676;
+$color-text-grey: #BBBCBC;
+$color-text-white: #FFFFFF;
+$color-value-red : #DA291C;
+
+/**
+*
+    Backgrounds:
+        general background
+        colour to be used across all the
+        pages.
+*/
+$color-bg-lightest-grey:#F6F6F6;
+
+/**
+* Dividers:
+    dividers and seconfdary interface
+    elements.
+*/
+$color-dividers-light-grey:#EBEBEB;
+
+/**
+ Form fieldes:
+    This colour, fill and outline has
+    to be used for form fields
+*/
+$color-form-fields-grey:#BBBCBC;
+$color-errormsg-bkg: #EBEBEB;
+$color-errormsg-fg:  #20252B;
+$color-alert-circle: #f06d00;
+$color-backend-error-icon: #ef1919;
+$color-action-confirm-undo: #4594d0;
+$color-action-confirm-icon: #1f7c34;
+
+/**
+ Form fieldes:
+    This colour, fill and outline has
+    to be used for form fields
+*/
+
+$color-dropdown-bkg-hover: $color-bg-lightest-grey;
+
+/**
+ Highlight Colors:
+    This color, fill and outline has
+    to be used for Highlighting
+*/
+$color-highlight-bright-turquoise : #00B2AC; // Primary colour for CTA
+$color-highlight-hover : #007D84; // hover state
+$color-highlight-active	: #005F66; // active state
+$color-highlight-link : #4594d0; // link color
+$color-highlight-link-hover : #0072CE; // link hover
+$color-highlight-link-selected : #004C97; // link selected
+
+@mixin cta {
+    background-color: $color-highlight-bright-turquoise;
+    &:hover {
+        background-color: $color-highlight-hover;
+    }
+    &:active {
+        background-color: $color-highlight-active;
+    }
+}
+
+/**
+ Value Colors:
+    This color used for values with positive and negative
+*/
+$color-value-positive : #78BE20; // Green
+$color-value-negative : #DA291C; // red
+
+
+/**
+* Common colors for negative and positive values
+*/
+.positive {
+    color: $color-value-positive;
+}
+
+.negative {
+    color: $color-value-negative;
+}
+
+/** start
+ Form background-color:
+    This colour, fill the background color
+    to be used for form
+*/
+$color-paymentform-background:#F8F9F9;
+
+/** End
+ Form background-color
+*/
+
+/*icons colors*/
+$color-icons-info: #d9edf7;
+$color-icons-warning:#faebcc;
+
+/*Border color Start*/
+$color-paymentform-border:#EFEFF0;
+
+/*Border color End*/
