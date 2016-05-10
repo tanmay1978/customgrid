@@ -1,0 +1,132 @@
+//xtra small screen
+$screen-xs: 320px;
+
+//small screen
+$screen-sm: 768px;
+
+//medium screen
+$screen-md: 992px;
+
+//large screen
+$screen-lg: 1200px;
+
+//xtra large screen
+$screen-xl: 1920px;
+
+//gutter variants
+$gutter-xs: 10px;
+$gutter-sm: 15px;
+$gutter-md: 15px;
+$gutter-lg: 15px;
+
+$grid-columns: 12 !default;
+
+.container-fluid {
+  $grid-gutter-width: 10px;
+  @media (min-width: 0) {
+
+    @include container-fixed($grid-gutter-width);
+  }
+
+  // 320px - 767px
+  $grid-gutter-width: 10px;
+  @media (min-width: $screen-xs) {
+
+    @include container-fixed($grid-gutter-width);
+  }
+
+  // 768px - 991px
+  $grid-gutter-width: 30px;
+  @media (min-width: $screen-sm) {
+
+    @include container-fixed($grid-gutter-width);
+  }
+
+  // 992px - 1199px
+  $grid-gutter-width: 30px;
+  @media (min-width: $screen-md) {
+
+    @include container-fixed($grid-gutter-width);
+  }
+
+  // 1200px - 1679px
+  $grid-gutter-width: 30px;
+  @media (min-width: $screen-lg) {
+
+      @include container-fixed($grid-gutter-width);
+  }
+}
+
+@mixin create-row() {
+    // 0px - 320px
+    $grid-gutter-width: 10px;
+    @media (min-width: 0) {
+
+      @include make-row($grid-gutter-width);
+    }
+
+    // 320px - 767px
+    $grid-gutter-width: 10px;
+    @media (min-width: $screen-xs) {
+
+      @include make-row($grid-gutter-width);
+    }
+
+    // 768px - 991px
+    $grid-gutter-width: 15px;
+    @media (min-width: $screen-sm) {
+
+      @include make-row($grid-gutter-width);
+    }
+
+    // 992px - 1199px
+    $grid-gutter-width: 15px;
+    @media (min-width: $screen-md) {
+
+      @include make-row($grid-gutter-width);
+    }
+
+    // 1200px - 1679px
+    $grid-gutter-width: 15px;
+    @media (min-width: $screen-lg) {
+
+        @include make-row($grid-gutter-width);
+    }
+
+    // & & {
+    //     clear: none;
+    //     margin: 0 !important;
+    // }
+
+   // @include clearfix;
+}
+
+@mixin make-responsive($xtrasmall, $small, $medium, $large) {
+
+    // 0px - 320px
+    @media (min-width: 0) {
+        @include make-xs-column(nth($xtrasmall,1), $gutter-xs);
+    }
+
+    // 320px - 767px
+    @media (min-width: $screen-xs) {
+        @include make-xs-column(nth($xtrasmall,1), $gutter-xs);
+    }
+
+    // 768px - 991px
+    @media (min-width: $screen-sm) {
+        @include make-sm-column(nth($xtrasmall,1), $gutter-md);
+    }
+
+    // 992px - 1199px
+    @media (min-width: $screen-md) {
+        @include make-md-column(nth($xtrasmall,1), $gutter-md);
+    }
+
+    // 1200px - 1679px
+    @media (min-width: $screen-lg) {
+        @include make-lg-column(nth($large,1), $gutter-lg);
+    }
+
+
+}
