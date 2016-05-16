@@ -1,0 +1,21 @@
+/*
+A demo bootstrap grid system using mixins
+
+Ensure we are following the mobile first appraoch
+
+*/
+
+
+.cs-container {
+    @include container-fluid;
+}
+
+.content {
+    height: 50px;
+    background-color: #00b3ee;
+}
+
+.nested-content {
+    @extend .content;
+    background-color: #00d4b4;
+}
