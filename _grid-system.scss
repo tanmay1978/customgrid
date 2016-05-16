@@ -1,3 +1,13 @@
+/**
+*
+    Screens with five breakpoints
+*/
+@import 'colors';
+
+/*
+Defined Breakpoints
+*/
+
 //xtra small screen
 $screen-xs: 320px;
 
@@ -19,92 +29,114 @@ $gutter-sm: 15px;
 $gutter-md: 15px;
 $gutter-lg: 15px;
 
-$grid-columns: 12 !default;
 
-.container-fluid {
-  $grid-gutter-width: 10px;
-  @media (min-width: 0) {
-
-    @include container-fixed($grid-gutter-width);
-  }
-
-  // 320px - 767px
-  $grid-gutter-width: 10px;
-  @media (min-width: $screen-xs) {
-
-    @include container-fixed($grid-gutter-width);
-  }
-
-  // 768px - 991px
-  $grid-gutter-width: 30px;
-  @media (min-width: $screen-sm) {
-
-    @include container-fixed($grid-gutter-width);
-  }
-
-  // 992px - 1199px
-  $grid-gutter-width: 30px;
-  @media (min-width: $screen-md) {
-
-    @include container-fixed($grid-gutter-width);
-  }
-
-  // 1200px - 1679px
-  $grid-gutter-width: 30px;
-  @media (min-width: $screen-lg) {
-
-      @include container-fixed($grid-gutter-width);
-  }
-}
-
-@mixin create-row() {
-    // 0px - 320px
-    $grid-gutter-width: 10px;
-    @media (min-width: 0) {
-
-      @include make-row($grid-gutter-width);
+@mixin container-fluid {
+    // 0px - 319px
+    $grid-gutter-width: 20px;
+    @media (min-width: $screen-xs) {
+        //margin-left: 5px;
+        //margin-right: 5px;
+        @include container-fixed($grid-gutter-width);
     }
 
     // 320px - 767px
+    $grid-gutter-width: 20px;
+    @media (min-width: $screen-xs) {
+        //margin-left: 5px;
+        //margin-right: 5px;
+        @include container-fixed($grid-gutter-width);
+    }
+
+    // 768px - 991px
+    $grid-gutter-width: 40px;
+    @media (min-width: $screen-sm) {
+        //margin-left: 12.5px;
+        //margin-right: 12.5px;
+        @include container-fixed($grid-gutter-width);
+    }
+
+    // 992px - 1999px
+    $grid-gutter-width: 40px;
+    @media (min-width: $screen-md) {
+        //margin-left: 12.5px;
+        //margin-right: 12.5px;
+        @include container-fixed($grid-gutter-width);
+    }
+
+    // 1200px - 1679px
+    $grid-gutter-width: 60px;
+    @media (min-width: $screen-lg) {
+        //margin-left: 22.5px;
+        //margin-right: 22.5px;
+        @include container-fixed($grid-gutter-width);
+    }
+}
+
+@mixin create-row() {
+
+    // 0px - 319px
     $grid-gutter-width: 10px;
     @media (min-width: $screen-xs) {
+        //margin-left: 5px;
+        //margin-right: 5px;
+        @include make-row($grid-gutter-width);
+    }
 
-      @include make-row($grid-gutter-width);
+    // 320px - 767px
+    $grid-gutter-width: 15px;
+    @media (min-width: $screen-xs) {
+        //margin-left: 5px;
+        //margin-right: 5px;
+        @include make-row($grid-gutter-width);
     }
 
     // 768px - 991px
     $grid-gutter-width: 15px;
     @media (min-width: $screen-sm) {
-
-      @include make-row($grid-gutter-width);
+        //margin-left: 12.5px;
+        //margin-right: 12.5px;
+        @include make-row($grid-gutter-width);
     }
 
-    // 992px - 1199px
+    // 992px - 1999px
     $grid-gutter-width: 15px;
     @media (min-width: $screen-md) {
-
-      @include make-row($grid-gutter-width);
+        //margin-left: 12.5px;
+        //margin-right: 12.5px;
+        @include make-row($grid-gutter-width);
     }
 
     // 1200px - 1679px
     $grid-gutter-width: 15px;
     @media (min-width: $screen-lg) {
-
+        //margin-left: 22.5px;
+        //margin-right: 22.5px;
         @include make-row($grid-gutter-width);
     }
+}
 
-    // & & {
-    //     clear: none;
-    //     margin: 0 !important;
-    // }
+.block-group, .row {
+    @include create-row();
+}
 
-   // @include clearfix;
+//overriding the mixin from bootstrap
+
+// Generate the extra small columns
+@mixin make-xs-column($columns, $gutter: $grid-gutter-width) {
+    position: relative;
+    float: left;
+    width: percentage(($columns / $grid-columns));
+    min-height: 1px;
+    padding-left:  ($gutter / 2);
+    padding-right: ($gutter / 2);
 }
 
 @mixin make-responsive($xtrasmall, $small, $medium, $large) {
 
-    // 0px - 320px
-    @media (min-width: 0) {
+    //$grid-columns: $total-columns;
+
+    // 0px - 319px
+    @media (max-width: $screen-xs - 1) {
         @include make-xs-column(nth($xtrasmall,1), $gutter-xs);
     }
 
@@ -115,18 +147,97 @@ $grid-columns: 12 !default;
 
     // 768px - 991px
     @media (min-width: $screen-sm) {
-        @include make-sm-column(nth($xtrasmall,1), $gutter-md);
+        @include make-sm-column(nth($small,1), $gutter-sm);
     }
 
-    // 992px - 1199px
+    // 992px - 1999px
     @media (min-width: $screen-md) {
-        @include make-md-column(nth($xtrasmall,1), $gutter-md);
+        @include make-md-column(nth($medium,1), $gutter-md);
     }
 
     // 1200px - 1679px
     @media (min-width: $screen-lg) {
         @include make-lg-column(nth($large,1), $gutter-lg);
     }
+}
 
+@mixin responsive($min-width) {
+    @media (min-width: $min-width) {
+        @content;
+    }
+}
 
+// Mixin for creating columns
+
+@mixin col-mobile($noof_cols) {
+    // 0px - 319px
+    // 320px - 767px
+//    @media (min-width: $screen-xs) {
+        @include make-xs-column($noof_cols, $gutter-xs);
+        padding-left:  floor($gutter-xs / 2);
+        padding-right: ceil($gutter-xs / 2);
+  //  }
+}
+
+@mixin col-tablet-potrait($noof_cols) {
+    // 768px - 991px (Tablet Potrait)
+    @media (min-width: $screen-sm) {
+        @include make-sm-column($noof_cols, $gutter-sm);
+        padding-left:  floor($gutter-sm / 2);
+        padding-right: ceil($gutter-sm / 2);
+    }
+}
+
+@mixin col-tablet-landscape($noof_cols) {
+    // 992px - 1999px (Tablet Landscape)
+    @media (min-width: $screen-md) {
+        @include make-md-column($noof_cols, $gutter-md);
+        padding-left:  floor($gutter-md / 2);
+        padding-right: ceil($gutter-md / 2);
+    }
+}
+
+@mixin col-desktop($noof_cols) {
+    // 1200px - 1679px (desktop and large screens)
+    @media (min-width: $screen-lg) {
+        @include make-lg-column($noof_cols, $gutter-lg);
+        padding-left:  floor($gutter-lg / 2);
+        padding-right: ceil($gutter-lg / 2);
+    }
+}
+
+/*
+*  Form factor mobile
+*/
+@for $i from 1 through 12 {
+    .col-#{$i}-mobile {
+        @include col-mobile($i);
+    }
+}
+
+/*
+*  Form factor Tablet potrait
+*/
+@for $i from 1 through 12 {
+    .col-#{$i}-tab-potrait {
+        @include col-tablet-potrait($i);
+    }
+}
+
+/*
+*  Form factor Tablet landscape
+*/
+@for $i from 1 through 12 {
+    .col-#{$i}-tab-landscape {
+        @include col-tablet-landscape($i);
+    }
+}
+
+/*
+*  Form factor desktop and larger
+*/
+@for $i from 1 through 12 {
+    .col-#{$i}-desktop {
+        @include col-desktop($i);
+    }
 }
